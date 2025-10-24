@@ -275,3 +275,53 @@ JOIN products p ON p.product_id = oi.product_id
 GROUP BY p.product_id, p.product_name
 ORDER BY total_discount_value DESC
 LIMIT 20;
+
+-- Create view for sales summary 
+
+CREATE VIEW vw_sales_summary AS
+SELECT
+  o.order_id,
+  o.order_date,
+  o.required_date,
+  o.shipped_date,
+  o.order_status,
+  o.store_id,
+  s.store_name,
+  s.state AS region,
+  o.staff_id,
+  CONCAT(st.first_name, ' ', st.last_name) AS staff_name,
+  o.customer_id,
+  CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+  p.product_id,
+  p.product_name,
+  cat.category_name,
+  b.brand_name,
+  oi.quantity,
+  oi.list_price,
+  oi.discount,
+  (oi.quantity * oi.list_price) AS gross_sales,
+  (oi.quantity * oi.list_price * (1 - COALESCE(oi.discount,0))) AS net_sales,
+  (oi.quantity * oi.list_price * COALESCE(oi.discount,0)) AS discount_value
+FROM order_items oi
+JOIN orders o ON oi.order_id = o.order_id
+JOIN products p ON p.product_id = oi.product_id
+JOIN categories cat ON cat.category_id = p.category_id
+JOIN brands b ON b.brand_id = p.brand_id
+JOIN customers c ON c.customer_id = o.customer_id
+JOIN staffs st ON st.staff_id = o.staff_id
+JOIN stores s ON s.store_id = o.store_id;
+
+-- Create view for inventory
+
+CREATE VIEW vw_inventory_status AS
+SELECT
+  s.store_name,
+  p.product_name,
+  cat.category_name,
+  st.quantity AS stock_level
+FROM stocks st
+JOIN stores s ON s.store_id = st.store_id
+JOIN products p ON p.product_id = st.product_id
+JOIN categories cat ON cat.category_id = p.category_id;
+
+
