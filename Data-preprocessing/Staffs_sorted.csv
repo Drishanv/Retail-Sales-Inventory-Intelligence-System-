@@ -1,0 +1,11 @@
+staff_id,first_name,last_name,email,phone,active,store_id,manager_id
+1,Fabiola,Jackson,Fabiola.Jackson@Bikes.Shop,(831) 555-5554,1,1,
+2,Mireya,Copeland,Mireya.Copeland@Bikes.Shop,(831) 555-5555,1,1,1.0
+5,Jannette,David,Jannette.David@Bikes.Shop,(516) 379-4444,1,2,1.0
+8,Kali,Vargas,Kali.Vargas@Bikes.Shop,(972) 530-5555,1,3,1.0
+3,Genna,Serrano,Genna.Serrano@Bikes.Shop,(831) 555-5556,1,1,2.0
+4,Virgie,Wiggins,Virgie.Wiggins@Bikes.Shop,(831) 555-5557,1,1,2.0
+6,Marcelene,Boyer,Marcelene.Boyer@Bikes.Shop,(516) 379-4445,1,2,5.0
+7,Venita,Daniel,Venita.Daniel@Bikes.Shop,(516) 379-4446,1,2,5.0
+9,Layla,Terrell,Layla.Terrell@Bikes.Shop,(972) 530-5556,1,3,7.0
+10,Bernardine,Houston,Bernardine.Houston@Bikes.Shop,(972) 530-5557,1,3,7.0
