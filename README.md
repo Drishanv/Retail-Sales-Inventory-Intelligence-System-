@@ -168,7 +168,7 @@ The dataset consists of **Sales** and **Production** domains:
 ## 👤 Author
 **Drishan Vig**  
 Email: [drishan0597@gmail.com](mailto:drishan0597@gmail.com)  
-GitHub: [github.com/DrishanV]
+GitHub: [github.com/DrishanV](https://github.com/DrishanV)
 
 ---
 
